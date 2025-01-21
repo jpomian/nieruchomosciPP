@@ -6,10 +6,18 @@ import { Briefcase, Users, Shield, Star, Zap, Settings, BarChart, Lock, UserPlus
 
 type Role = 'Agent' | 'Pro' | 'Admin'
 
+type RoleName = 'Agent Nieruchomości' | 'Rzeczoznawca Majątkowy' | 'Biegły Sądowy'
+
 type ServiceInfo = {
   icon: React.ReactNode
   title: string
   description: string
+}
+
+const roleNameMapping: Record<Role, RoleName> = {
+  Agent: 'Agent Nieruchomości',
+  Pro: 'Rzeczoznawca Majątkowy',
+  Admin: 'Biegły Sądowy',
 }
 
 const serviceData: Record<Role, ServiceInfo[]> = {
@@ -42,14 +50,14 @@ export default function DynamicServicesSection() {
         <div className="absolute bottom-1/2 right-1/3 w-72 h-72 bg-blue-600/10 rounded-full blur-2xl"></div>
       </div>
       <div className="max-w-4xl w-full space-y-8 relative z-10">
-        <h2 className="text-3xl font-bold text-center py-2">Zakres Usług</h2>
+        <h2 className="text-3xl font-bold text-center p-4">Zakres Usług</h2>
         <p className="text-center text-muted-foreground mb-8">
-          Jako <span className="highlight">agent nieruchomości</span>, <span className="highlight">rzeczoznawca majątkowy</span> oraz <span className="highlight">biegły sądowy</span> mogę wykonać gametę usług pod zlecenie:
+          Jako <span className="highlight">{roleNameMapping[selectedRole]}</span> mogę wykonać następujące usługi pod zlecenie:
         </p>
 
         <div className="space-y-6">
           {serviceData[selectedRole].map((service, index) => (
-            <InfoPane 
+            <InfoPane
               key={index}
               icon={service.icon}
               title={service.title}
@@ -61,9 +69,8 @@ export default function DynamicServicesSection() {
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
           {(['Agent', 'Pro', 'Admin'] as Role[]).map((role) => (
             <button key={role} className='secondary-button' onClick={() => setSelectedRole(role)}>
-                {role}
+              {roleNameMapping[role]}
             </button>
-
           ))}
         </div>
       </div>
@@ -74,7 +81,7 @@ export default function DynamicServicesSection() {
 function InfoPane({ icon, title, description }: ServiceInfo) {
   return (
     <Card className="w-full backdrop-blur-sm bg-background/80">
-      <CardContent className="flex items-center px-8 py-6">
+      <CardContent className="flex items-center px-10 py-8">
         <div className="bg-primary/10 p-4 rounded-full mr-6">
           {icon}
         </div>
@@ -86,4 +93,3 @@ function InfoPane({ icon, title, description }: ServiceInfo) {
     </Card>
   )
 }
-

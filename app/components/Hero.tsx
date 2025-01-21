@@ -3,7 +3,7 @@ import Photo from "../assets/photo-squared.png";
 
 export default function Hero() {
   return (
-    <section className="container mx-auto px-4 py-12 md:py-20 mt-24">
+    <section className="container mx-auto px-4 py-12 md:py-20 mt-20">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-start">
         <div className="space-y-8">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -12,7 +12,7 @@ export default function Hero() {
 
           <div className="space-y-4 text-muted-foreground">
             <p>
-              Absolwentka Uniwersytetu Ekonomicznego w Poznaniu. Doświadczony{" "}
+              Absolwentka Akademii Ekonomicznej w Poznaniu. Doświadczony{" "}
               <span className="highlight">rzeczoznawca majątkowy</span> z
               wieloletnim doświadczeniem i wieloma pozytywnymi opiniami.
             </p>
