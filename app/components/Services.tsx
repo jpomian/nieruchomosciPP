@@ -44,13 +44,13 @@ export default function DynamicServicesSection() {
   return (
     <section className="min-h-1/2 bg-background flex flex-col justify-center items-center p-6 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gray-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#f59e0b]/20 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-xl"></div>
         <div className="absolute top-3/4 left-1/2 w-48 h-48 bg-gray-600/10 rounded-full blur-2xl"></div>
         <div className="absolute bottom-1/2 right-1/3 w-72 h-72 bg-blue-600/10 rounded-full blur-2xl"></div>
       </div>
       <div className="max-w-4xl w-full space-y-8 relative z-10">
-        <h2 className="text-3xl font-bold text-center p-4">Zakres Usług</h2>
+        <h2 className="text-3xl font-bold text-center">Zakres Usług</h2>
         <p className="text-center text-muted-foreground mb-8">
           Jako <span className="highlight">{roleNameMapping[selectedRole]}</span> mogę wykonać następujące usługi pod zlecenie:
         </p>

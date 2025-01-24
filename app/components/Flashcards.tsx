@@ -12,12 +12,11 @@ const Flashcard: React.FC<FlashcardProps> = ({ question, answer }) => {
 
   return (
     <div
-      className={`w-96 h-40 m-4 cursor-pointer transition-all duration-300 flex items-center justify-center p-4 text-center rounded-lg shadow-md ${
-        isRevealed ? 'bg-white sparkle' : 'bg-blue-400 hover:bg-blue-600'
-      }`}
+      className={`w-96 h-40 m-4 cursor-pointer transition-all duration-300 flex items-center justify-center p-4 text-center rounded-lg shadow-md ${isRevealed ? 'bg-white sparkle' : 'bg-blue-400 hover:bg-blue-600'
+        }`}
       onClick={() => setIsRevealed(!isRevealed)}
     >
-      <p className={`text-lg ${isRevealed ? 'font-medium' : 'font-semibold'}`}>
+      <p className={`text-lg ${isRevealed ? 'font-medium' : 'font-semibold text-white/95'}`}>
         {isRevealed ? answer : question}
       </p>
     </div>
@@ -33,14 +32,18 @@ export default function Flashcards() {
   ]
 
   return (
-    <>
-    <h1 className='flex justify-center text-3xl font-bold text-center p-4 mb-6'>Najczęściej zadawane pytania</h1>
-    <div className="flex flex-wrap justify-center gap-4 md:gap-12 max-w-[1000px] mx-auto">
-      {cards.map((card, index) => (
-        <Flashcard key={index} question={card.question} answer={card.answer} />
-      ))}
-      
-      <style jsx global>{`
+    <div>
+      <div className='flex flex-col justify-center items-center'>
+        <h1 className='flex justify-center text-3xl font-bold text-center pt-12 pb-2 px-6'>Najczęściej zadawane pytania</h1>
+        <h3 className="text-sm text-gray-400 mb-6">Zadawane przez naszych klientow.</h3>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-4 md:gap-12 max-w-[1000px] mx-auto">
+        {cards.map((card, index) => (
+          <Flashcard key={index} question={card.question} answer={card.answer} />
+        ))}
+
+        <style jsx global>{`
         @keyframes sparkle {
           0% {
             background-position: 0% 50%;
@@ -62,8 +65,9 @@ export default function Flashcards() {
           animation: sparkle 0.5s ease-in-out;
         }
       `}</style>
+      </div>
+      <div className="mb-8"></div>
     </div>
-    </>
   )
 }
 

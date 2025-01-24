@@ -51,6 +51,15 @@ export default {
 					'5': 'hsl(var(--chart-5))'
 				}
 			},
+			keyframes: {
+				scroll: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' },
+				},
+			},
+			animation: {
+				scroll: 'scroll 20s linear infinite',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

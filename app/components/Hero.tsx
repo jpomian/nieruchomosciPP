@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="container mx-auto px-4 py-12 md:py-20 mt-20">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-start">
         <div className="space-y-8">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
             Elżbieta Pomianowska-Koleńska
           </h1>
 
@@ -34,6 +34,7 @@ export default function Hero() {
               oni są dla mnie najważniejsi 🥰
             </p>
           </div>
+          <div className="h-6"></div>
           <div className="flex justify-center">
             <button className="bg-[#4154F1] hover:bg-[#3544d2] text-white px-12 md:py-8 py-6 mt-8 text-lg">
               Zobacz aktualne nieruchomości na sprzedaż.
