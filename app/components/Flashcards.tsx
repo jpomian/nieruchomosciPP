@@ -92,7 +92,7 @@ export default function Flashcards() {
         <h3 className="text-sm text-gray-400 mb-6">Zadawane przez naszych klientów.</h3>
 
         <div className="flex justify-center items-center mb-8">
-          <p className="text-md text-gray-500">Pytania są skierowane od klientów potrzebujących pomocy <span className="highlight hover:text-sky-400 duration-300 cursor-pointer" onClick={() => handleFilter("W")}>pośrednika nieruchomości</span> lub <span className="font-bold text-green-500 hover:text-green-300 duration-300 cursor-pointer" onClick={() => handleFilter("P")}>rzeczoznawcy</span>.</p>
+          <p className="text-md text-gray-500">Pytania są skierowane od klientów potrzebujących pomocy <span className="highlight hover:text-sky-400 duration-300 cursor-pointer" onClick={() => handleFilter("W")}>rzeczoznawcy</span> lub <span className="font-bold text-green-500 hover:text-green-300 duration-300 cursor-pointer" onClick={() => handleFilter("P")}>pośrednika nieruchomości</span>.</p>
         </div>
       </div>
 

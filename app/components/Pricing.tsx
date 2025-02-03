@@ -24,6 +24,8 @@ export default function PricingComponent() {
                 </div>
                 <CardHeader>
                     <h2 className="text-4xl font-bold text-center text-sky-800">Cennik</h2>
+                    <h3 className="text-sm text-gray-400 text-center mt-2">Dla poszczególnych rodzajów wycen.</h3>
+
                 </CardHeader>
                 <CardContent>
                     <div className="overflow-x-auto">
