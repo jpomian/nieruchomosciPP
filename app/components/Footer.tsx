@@ -1,11 +1,16 @@
 import { Terminal } from "lucide-react";
+import Logo from '../assets/logo-transparent.png';
+import Image from 'next/image';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-100 py-8">
+        <footer className="bg-gray-100 py-12 sm:py-16">
             <div className="max-w-screen-xl mx-auto px-4">
-                <div className="text-gray-700 text-lg font-bold text-center mb-4">
-                    Nieruchomości pod parasolem
+                <div className="flex items-center justify-center mb-6">
+                    <Image src={Logo} alt='Nieruchomości Pod Parasolem' width={70} height={70} className="mr-4" />
+                    <div className="text-gray-700 text-xl font-bold">
+                        Nieruchomości pod parasolem
+                    </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                     <div>
@@ -21,7 +26,7 @@ const Footer = () => {
                         <div className="text-gray-700">Poznań, ul. Stróżyńskiego</div>
                     </div>
                 </div>
-                <hr className="my-6 border-t border-gray-300" />
+                <hr className="my-8 border-t border-gray-300" />
                 <div className="flex flex-col sm:flex-row justify-center text-gray-500 text-sm pt-2">
                     Twórcą strony jest&nbsp;
                     <Terminal size={16} className="mt-1 hidden md:block" /> <a href="https://github.com/jpomian" className='anchor'>Jędrzej Pomianowski</a>.

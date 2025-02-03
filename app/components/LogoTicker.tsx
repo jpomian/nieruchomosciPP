@@ -6,9 +6,12 @@ import drhouseLogo from '../assets/tickers/dr-house.png';
 
 export const LogoTicker = () => {
     return (
-        <div className='p-8 relative w-full border-t-2 border-b-2 border-dashed border-gray-300'>
+        <div className='p-12 relative w-full border-t-2 border-b-2 border-dashed border-gray-300'>
             <div className='container mx-auto'>
-                <h1 className='text-3xl font-bold text-center mb-12'>Partnerzy</h1>
+                <div className='flex flex-col justify-center items-center'>
+                <h1 className='text-3xl font-bold text-center pb-2 px-6'>Organizacje</h1>
+                <h3 className="text-sm text-gray-400 mb-6">Dla których sporządzałam wyceny.</h3>
+                </div>
                 <div className='overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]'>
                     <div className='flex gap-[96px] justify-center items-center'>
                         <Image src={millenniumLogo} alt='Millennium Bank' className='ticker' />

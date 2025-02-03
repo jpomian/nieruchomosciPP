@@ -1,49 +1,38 @@
-import Image from "next/image";
-import Photo from "../assets/photo-squared.png";
+import Image from "next/image"
+import Photo from "../assets/photo-squared.png"
 
 export default function Hero() {
   return (
-    <section className="container mx-auto px-4 py-12 md:py-20 mt-20">
+    <section id="about" className="container mx-auto px-4 py-12 md:py-20 mt-24 scroll-mt-24">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-start">
         <div className="space-y-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Elżbieta Pomianowska-Koleńska
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Elżbieta Pomianowska-Koleńska</h1>
 
-          <div className="space-y-4 text-muted-foreground">
+          <div className="space-y-6 text-muted-foreground leading-8">
             <p>
-              Absolwentka Akademii Ekonomicznej w Poznaniu. Doświadczony{" "}
-              <span className="highlight">rzeczoznawca majątkowy</span> z
-              wieloletnim doświadczeniem i wieloma pozytywnymi opiniami.
+            Jestem Ela i po 13 latach pracy w banku jako analityk nieruchomości otworzyłam swoją własną firmę „<span className="highlight">Nieruchomości pod parasolem</span>”. ☂️
             </p>
 
             <p>
-              Od roku 2022 pracuję także jako{" "}
-              <span className="highlight">biegły sądowy</span>.
+            Dlaczego pod parasolem? Babcia zawsze powtarzała, że wszyscy chcą znaleźć się pod moim parasolem, ponieważ czują się tam bezpiecznie.
+            I taka jest moja misja – dbać o to, aby Wasze nieruchomości były gruntownie sprawdzone, dobrze wycenione a proces sprzedaży bezpieczny.🏡
             </p>
 
             <p>
-              Służbowo pełnię rolę{" "}
-              <span className="highlight">agenta nieruchomości</span> w obrębie
-              Poznania, a moją ulubioną dzielnicą jest Piątkowo.
+            Rozumiem, że nieruchomości to często dorobek życia, spełnienie marzeń albo element trudnych życiowych decyzji.
+            Jako <span className="highlight">rzeczoznawca majątkowy</span>, <span className="highlight">biegły sądowy</span> oraz <span className="highlight">pośrednik nieruchomści</span>, chętnie pomogę rozwiązać Wasze nieruchomościowe problemy 😊
             </p>
 
-            <p>
-              W wolnym czasie spędzam aktywnie czas z kochanymi córeczkami,
-              aniołkami. Staram się łączyć aktywne życie zawodowe z rodziną, to
-              oni są dla mnie najważniejsi 🥰
-            </p>
           </div>
-          <div className="h-6"></div>
           <div className="flex justify-center">
             <button className="bg-[#4154F1] hover:bg-[#3544d2] text-white px-12 md:py-8 py-6 mt-8 text-lg">
               Zobacz aktualne nieruchomości na sprzedaż.
             </button>
           </div>
-        </div>  
-        <div className="relative h-[600px] shadow-md">
+        </div>
+        <div className="relative h-[700px] shadow-md">
           <Image
-            src={Photo}
+            src={Photo || "/placeholder.svg"}
             alt="Elżbieta Pomianowska-Koleńska"
             fill
             className="object-cover rounded-lg object-top"
@@ -52,5 +41,6 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }
+
