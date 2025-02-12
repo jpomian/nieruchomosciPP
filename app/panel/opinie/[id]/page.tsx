@@ -2,13 +2,18 @@ import fs from "fs/promises"
 import path from "path"
 import { notFound } from "next/navigation"
 
+interface Feedback {
+  id: string
+  name: string
+}
+
 async function getFeedbackById(id: string) {
   const filePath = path.join(process.cwd(), "data", "feedback.json")
   try {
     const fileContent = await fs.readFile(filePath, "utf-8")
     const feedbacks = JSON.parse(fileContent)
-    return feedbacks.find((feedback: any) => feedback.id === id)
-  } catch (error) {
+    return feedbacks.find((feedback: Feedback) => feedback.id === id)
+  } catch {
     return null
   }
 }

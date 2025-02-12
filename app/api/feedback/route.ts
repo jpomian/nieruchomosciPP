@@ -14,16 +14,15 @@ export async function POST(request: Request) {
     try {
       const fileContent = await fs.readFile(filePath, "utf-8")
       feedbacks = JSON.parse(fileContent)
-    } catch (error) {
-      console.log('Could not add feedback. Error message: %s', error)
+    } catch {
+      console.log('Could not add feedback.')
     }
 
     feedbacks.push(feedback)
     await fs.writeFile(filePath, JSON.stringify(feedbacks, null, 2))
 
     return NextResponse.json({ message: "Feedback submitted successfully", id }, { status: 201 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: "Failed to submit feedback" }, { status: 500 })
   }
 }
-
