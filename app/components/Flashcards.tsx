@@ -67,9 +67,13 @@ export default function Flashcards() {
       type: "W",
     },
     {
-      question: "X",
+      question: "Co obejmuje umowa pośrednictwa?",
       answers: [
-        "Y",
+        "Obejmuje wycenę nieruchomości",
+        "Obejmuje sesję fotograficzną",
+        "Obejmuje publikacje oferty nieruchomości na portalach ogłoszeniowych",
+        "Obejmuje prezentację nieruchomości",
+        "Obejmuje przygotowanie dokumentacji",
       ],
       type: "P",
     },

@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import Image from "next/image"
 import Logo from "../assets/logo-transparent.png"
@@ -7,7 +5,7 @@ import Logo from "../assets/logo-transparent.png"
 export default function Navbar2() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md transition-all duration-300">
-      <div className="py-8">
+      <div className="py-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-center">
             <Link href="/" className="flex items-center group">
