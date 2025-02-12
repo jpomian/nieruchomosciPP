@@ -26,12 +26,11 @@ async function getFeedbackById(id: string) {
   }
 }
 
-interface PageProps {
-  params: { id: string }
-}
+type paramsType = Promise<{ id: string }>
 
-export default async function FeedbackDetailPage({ params }: PageProps) {
-  const feedback = await getFeedbackById(params.id)
+export default async function FeedbackDetailPage(props: { params: paramsType }) {
+  const { id } = await props.params
+  const feedback = await getFeedbackById(id)
 
   if (!feedback) {
     notFound()
