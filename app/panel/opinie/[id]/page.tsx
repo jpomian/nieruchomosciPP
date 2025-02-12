@@ -5,20 +5,32 @@ import { notFound } from "next/navigation"
 interface Feedback {
   id: string
   name: string
+  phone?: string
+  email?: string
+  feedback: string
 }
+
 
 async function getFeedbackById(id: string) {
   const filePath = path.join(process.cwd(), "data", "feedback.json")
   try {
     const fileContent = await fs.readFile(filePath, "utf-8")
+    if (fileContent.trim() === "") {
+      return null
+    }
     const feedbacks = JSON.parse(fileContent)
     return feedbacks.find((feedback: Feedback) => feedback.id === id)
-  } catch {
+  } catch (error) {
+    console.error("Error reading feedback.json:", error)
     return null
   }
 }
 
-export default async function FeedbackDetailPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string }
+}
+
+export default async function FeedbackDetailPage({ params }: PageProps) {
   const feedback = await getFeedbackById(params.id)
 
   if (!feedback) {
