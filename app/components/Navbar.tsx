@@ -80,13 +80,7 @@ export default function Navbar() {
               >
                 Najczęściej zadawane pytania
               </Link>
-              <Link
-                href="#services"
-                onClick={(e) => handleScroll(e, "services")}
-                className={`anchor ${activeLink === "services" ? "text-blue-500" : ""}`}
-              >
-                Zakres usług
-              </Link>
+
               <Link
                 href="#cennik"
                 onClick={(e) => handleScroll(e, "cennik")}
@@ -130,13 +124,7 @@ export default function Navbar() {
               >
                 Najczęściej zadawane pytania
               </Link>
-              <Link
-                href="#services"
-                onClick={(e) => handleScroll(e, "services")}
-                className={`text-black/60 anchor ${activeLink === "services" ? "text-blue-500" : ""}`}
-              >
-                Zakres usług
-              </Link>
+
               <Link
                 href="#cennik"
                 onClick={(e) => handleScroll(e, "cennik")}
