@@ -1,3 +1,4 @@
+import Carousel from "./components/Carousel";
 import Flashcards from "./components/Flashcards";
 import Hero from "./components/Hero";
 import { LogoTicker } from "./components/LogoTicker";
@@ -12,6 +13,7 @@ export default function Home() {
       <LogoTicker />
       <Flashcards />
       <Pricing />
+      <Carousel />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Photo from "../assets/photo-squared.png"
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -25,9 +26,12 @@ export default function Hero() {
 
           </div>
           <div className="flex justify-center">
+            <Link href='#oferty'>
             <button className="bg-[#4154F1] hover:bg-[#3544d2] text-white px-12 md:py-8 py-6 mt-8 text-lg">
               Zobacz aktualne nieruchomości na sprzedaż.
             </button>
+            </Link>
+            
           </div>
         </div>
         <div className="relative h-[700px] shadow-md">

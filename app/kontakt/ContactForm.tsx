@@ -9,7 +9,7 @@ import { Label } from "@/app/components/ui/label"
 import { Card } from "@/app/components/ui/card"
 
 import Link from "next/link"
-import { Instagram, Facebook } from "lucide-react"
+import { Instagram } from "lucide-react"
 
 export default function ContactForm() {
   const [name, setName] = useState("")
@@ -99,26 +99,17 @@ export default function ContactForm() {
           informacji, prosimy o kontakt za pomocą tego formularza. Udzielam bezpłatnych <span className="highlight">45 minutowych konsultacji</span> przed przeprowadzeniem wyceny.
         </p>
         <p className="mb-2">
-          Zapraszamy także do obserwowania naszych profilów społecznościowych.
+          Zapraszamy także do obserwowania naszych social media.
         </p>
-        <div className="flex flex-col sm:flex-row gap-8 mt-12">
+        <div className="flex flex-col sm:flex-row gap-8 mt-16">
             <Link
-              href="https://www.instagram.com/youraccount"
+              href="https://www.instagram.com/nieruchomosci_pod_parasolem/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-2 text-sm font-medium text-white transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
             >
               <Instagram className="mr-2 h-5 w-5" />
-              Obserwuj na Instagramie
-            </Link>
-            <Link
-              href="https://www.facebook.com/youraccount"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-            >
-              <Facebook className="mr-2 h-5 w-5" />
-              Polub na Facebooku
+              Sprawdź profil na Instagramie
             </Link>
           </div>
       </Card>

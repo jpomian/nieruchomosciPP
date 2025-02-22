@@ -29,7 +29,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScrollUpdate = () => {
       const scrollPosition = window.scrollY
-      const sections = ["about", "faq", "services", "offers"]
+      const sections = ["ja", "faq", "services", "offers"]
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -62,14 +62,14 @@ export default function Navbar() {
       <div className="py-8">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
-            <Link href="/" onClick={(e) => handleScroll(e, "about")}>
+            <Link href="/" onClick={(e) => handleScroll(e, "ja")}>
               <Image src={Logo || "/placeholder.svg"} alt="Nieruchomości pod parasolem" height={80} width={80} className="ml-4 md:ml-8" />
             </Link>
             <nav className="hidden md:flex gap-6 text-black/60 items-center pr-4 md:pr-8">
               <Link
-                href="#about"
-                onClick={(e) => handleScroll(e, "about")}
-                className={`anchor ${activeLink === "about" ? "text-blue-500" : ""}`}
+                href="#ja"
+                onClick={(e) => handleScroll(e, "ja")}
+                className={`anchor ${activeLink === "ja" ? "text-blue-500" : ""}`}
               >
                 O mnie
               </Link>
@@ -89,9 +89,9 @@ export default function Navbar() {
                 Cennik
               </Link>
               <Link
-                href="#offers"
+                href="#oferty"
                 onClick={(e) => handleScroll(e, "offers")}
-                className={`anchor ${activeLink === "offers" ? "text-blue-500" : ""}`}
+                className={`anchor ${activeLink === "oferty" ? "text-blue-500" : ""}`}
               >
                 Oferty
               </Link>
@@ -111,9 +111,9 @@ export default function Navbar() {
       >
         <nav className="flex flex-col gap-4 p-4">
         <Link
-                href="#about"
-                onClick={(e) => handleScroll(e, "about")}
-                className={`text-black/60 anchor ${activeLink === "about" ? "text-blue-500" : ""}`}
+                href="#ja"
+                onClick={(e) => handleScroll(e, "ja")}
+                className={`text-black/60 anchor ${activeLink === "ja" ? "text-blue-500" : ""}`}
               >
                 O mnie
               </Link>
@@ -133,9 +133,9 @@ export default function Navbar() {
                 Cennik
               </Link>
               <Link
-                href="#offers"
-                onClick={(e) => handleScroll(e, "offers")}
-                className={`text-black/60 anchor ${activeLink === "offers" ? "text-blue-500" : ""}`}
+                href="#oferty"
+                onClick={(e) => handleScroll(e, "oferty")}
+                className={`text-black/60 anchor ${activeLink === "oferty" ? "text-blue-500" : ""}`}
               >
                 Oferty
               </Link>
