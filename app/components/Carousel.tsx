@@ -30,7 +30,7 @@ export default function Carousel() {
         const offers = await response.json();
 
         const propertyDataPromises = offers.map(async (offer: OfferData) => {
-          const propertyUrl = await offer.id
+          const propertyUrl = offer.id
           const htmlResponse = await fetch(
             `/api/scrape?url=${encodeURIComponent(offer.url)}`
           );
@@ -108,8 +108,11 @@ export default function Carousel() {
                       : "w-full"
                   }`}
                 >
-                  <div className="relative h-[600px] w-full overflow-hidden">
-                    <Link href={`nieruchomosc/${property.id}`}>
+                  <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden">
+                    <Link
+                    href={`nieruchomosc/${property.id}`}
+                    className="block h-full w-full"
+                    >
                     <Image
                       src={property.image}
                       alt={property.title}

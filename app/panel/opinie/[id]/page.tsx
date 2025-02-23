@@ -28,7 +28,7 @@ async function getFeedbackById(id: string) {
 
 type paramsType = Promise<{ id: string }>
 
-export default async function FeedbackDetailPage(props: { params: paramsType }) {
+export default async function FeedbackDetailPage(props: { params: Promise<paramsType> }) {
   const { id } = await props.params
   const feedback = await getFeedbackById(id)
 

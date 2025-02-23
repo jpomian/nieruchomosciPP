@@ -4,15 +4,20 @@ import HouseInfo from "../../components/HouseInfo";
 import SellerInfo from "../../components/SellerInfo";
 import PropertyDescription from "../../components/PropertyDescription";
 import { getData, extractScriptContent } from "@/lib/data-fetcher";
-import { getPropertyOffers } from '@/lib/offerData';
+import { getPropertyOffers } from "@/lib/offerData";
 import OtoButton from "../../components/ui/otobutton";
 import Navbar2 from "@/app/components/Navbar2";
 
-
-export default async function PropertyOffer({ params }: { params: Promise<{ id: string }> }) {
+export default async function PropertyOffer(
+  props: {
+    params: Promise<{ id: string }>; // Remove Promise wrapper
+  }
+) {
+  const params = await props.params;
   const offers = await getPropertyOffers();
 
-  const offer = await offers.find(async (o) => o.id === (await params).id);
+  // Remove async/await from find callback
+  const offer = offers.find((o) => o.id === params.id);
 
   if (!offer) {
     return <div>Offer not found</div>;
@@ -29,10 +34,12 @@ export default async function PropertyOffer({ params }: { params: Promise<{ id: 
 
   return (
     <div className="min-h-screen bg-gray-100">
-        <Navbar2 />
+      <Navbar2 />
 
       <main className="container mx-auto px-4 py-8 mt-16">
-        <h1 className="text-3xl font-bold text-center mb-2">Oglądasz Nieruchomość</h1>
+        <h1 className="text-3xl font-bold text-center mb-2">
+          Oglądasz Nieruchomość
+        </h1>
         <h1 className="text-lg text-center text-gray-500 mb-8">
           {propertyData.title}
         </h1>
@@ -44,9 +51,7 @@ export default async function PropertyOffer({ params }: { params: Promise<{ id: 
             <PropertyDescription description={propertyData.description} />
           </div>
           <div>
-            <HouseInfo
-              characteristics={propertyData.characteristics}
-            />
+            <HouseInfo characteristics={propertyData.characteristics} />
             <SellerInfo />
           </div>
         </div>
