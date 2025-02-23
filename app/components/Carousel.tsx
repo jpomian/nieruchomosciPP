@@ -134,7 +134,7 @@ export default function Carousel() {
                           {property.title}
                         </h3>
                         <div className="flex items-center gap-4">
-                          <span className="text-2xl font-bold text-green-400/80">
+                          <span className="text-xl font-bold text-green-400/80">
                             {property.price}
                           </span>
                         </div>

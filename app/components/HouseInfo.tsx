@@ -23,19 +23,33 @@ interface DetailItemProps {
 }
 
 export default function HouseInfo({ characteristics }: HouseInfoProps) {
-  const { price, area, rooms, pricePerMeter, buildingType, heating } = characteristics
+
+  const getSafeValue = (char: ProcessedCharacteristic | undefined) => {
+    return char?.value ?? '-';
+  }
+
+
+
+  const { 
+    price,
+    area,
+    rooms,
+    pricePerMeter,
+    buildingType,
+    heating
+  } = characteristics
 
   return (
     <Card className="mb-8">
       <CardContent className="p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Informacje główne</h2>
         <div className="grid grid-cols-2 gap-4">
-          <DetailItem icon={<Home />} label={price.displayName} value={price.value} />
-          <DetailItem icon={<BedDouble />} label={rooms.displayName} value={rooms.value} />
-          <DetailItem icon={<Box />} label={area.displayName} value={area.value} />
-          <DetailItem icon={<Heater />} label={heating.displayName} value={heating.value} />
-          <DetailItem icon={<SquareRadical />} label={pricePerMeter.displayName} value={pricePerMeter.value} />
-          <DetailItem icon={<BrickWall />} label={buildingType.displayName} value={buildingType.value} />
+          <DetailItem icon={<Home />} label={price?.displayName || 'Cena'} value={getSafeValue(price)} />
+          <DetailItem icon={<BedDouble />} label={rooms?.displayName || 'Pokoje'} value={getSafeValue(rooms)} />
+          <DetailItem icon={<Box />} label={area?.displayName || 'Powierzchnia'} value={getSafeValue(area)} />
+          <DetailItem icon={<Heater />} label={heating?.displayName || 'Ogrzewanie'} value={getSafeValue(heating)} />
+          <DetailItem icon={<SquareRadical />} label={pricePerMeter?.displayName || 'Cena za m²'} value={getSafeValue(pricePerMeter)} />
+          <DetailItem icon={<BrickWall />} label={buildingType?.displayName || 'Rodzaj zabudowy'} value={getSafeValue(buildingType)} />
         </div>
         <div className="mt-6">
           <Badge variant="secondary" className="w-full justify-center text-lg">
