@@ -67,14 +67,14 @@ export default function Carousel() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-red-500 text-xl">
+      <div className="flex items-center justify-center text-red-500 text-xl">
         {error} - Please try again later
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen w-full px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-blue-500 text-center mb-6">
           Nieruchomości na sprzedaż
