@@ -90,7 +90,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="#oferty"
-                onClick={(e) => handleScroll(e, "offers")}
+                onClick={(e) => handleScroll(e, "oferty")}
                 className={`anchor ${activeLink === "oferty" ? "text-blue-500" : ""}`}
               >
                 Oferty

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section id="about" className="container mx-auto px-4 py-12 md:py-20 mt-24 scroll-mt-24">
+    <section id="ja" className="container mx-auto px-4 py-12 md:py-20 mt-24 scroll-mt-24">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-start">
         <div className="space-y-8">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Elżbieta Pomianowska-Koleńska</h1>
