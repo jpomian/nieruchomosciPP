@@ -21,7 +21,7 @@ export default function Flashcards() {
         "dla potrzeb zabezpieczenia wierzytelności",
         "dla potrzeb podatkowych i skarbowych",
         "dla potrzeb podziału majątku",
-        "dla potrzeb wniesienia nieruchomości jako aport do spółki",
+        "dla potrzeb wniesienia nieruchomości jako raport do spółki",
         "dla potrzeb ubezpieczenia nieruchomości",
       ],
       type: "W",
@@ -55,14 +55,14 @@ export default function Flashcards() {
       type: "W",
     },
     {
-      question: "Jakie są koszta pośrednictwa?",
+      question: "Jakie są koszty pośrednictwa?",
       answers: [
         "Od 1,5% wartości nieruchomości.",
       ],
       type: "P",
     },
     {
-      question: "W obrębie jakiego obszaru dokonuje wycen?",
+      question: "W obrębie jakiego obszaru dokonuję wycen?",
       answers: ["Głównie woj. Wielkopolskie, pozostałe lokalizacje ustalane indywidualnie."],
       type: "W",
     },

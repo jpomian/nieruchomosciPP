@@ -18,7 +18,7 @@ const Footer = () => {
                         <div className="text-gray-700">+48 782 014 827</div>
                     </div>
                     <div>
-                        <div className="text-gray-700 font-semibold">E-Mail</div>
+                        <div className="text-gray-700 font-semibold">E-mail</div>
                         <div className="text-gray-700">elzbieta.pomianowska@wp.pl</div>
                     </div>
                     <div>

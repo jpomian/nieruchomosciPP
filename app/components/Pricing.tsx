@@ -45,7 +45,7 @@ export default function PricingComponent() {
                         </table>
                     </div>
                     <div className="flex justify-center items-center mt-4">
-                        <p className="text-sm text-gray-400">W przypadku nieruchomości nieokreślonych w powyższym cenniku lub innych przypadków, zapraszam do <a href="/kontakt" className="underline text-gray-600">skontaktowania</a> się ze Mną 😚</p>
+                        <p className="text-sm text-gray-400">W przypadku nieruchomości nieokreślonych w powyższym cenniku lub innych usług, zapraszam do <a href="/kontakt" className="underline text-gray-600">skontaktowania</a> się ze mną 😚</p>
                     </div>
                 </CardContent>
             </Card>

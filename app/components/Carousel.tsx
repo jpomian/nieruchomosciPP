@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Spinner } from "./ui/Spinner";
+import Link from 'next/link'
 
 interface PropertyData {
   title: string;
   price: string;
   image: string;
+  id: string;
 }
 
 interface OfferData {
@@ -28,6 +30,7 @@ export default function Carousel() {
         const offers = await response.json();
 
         const propertyDataPromises = offers.map(async (offer: OfferData) => {
+          const propertyUrl = await offer.id
           const htmlResponse = await fetch(
             `/api/scrape?url=${encodeURIComponent(offer.url)}`
           );
@@ -46,6 +49,7 @@ export default function Carousel() {
             title: metadata.title,
             price: metadata.characteristics.price?.value || "N/A",
             image: firstImage,
+            id: propertyUrl,
           };
         });
 
@@ -105,6 +109,7 @@ export default function Carousel() {
                   }`}
                 >
                   <div className="relative h-[600px] w-full overflow-hidden">
+                    <Link href={`nieruchomosc/${property.id}`}>
                     <Image
                       src={property.image}
                       alt={property.title}
@@ -117,6 +122,8 @@ export default function Carousel() {
                           "/default-image.jpg";
                       }}
                     />
+                    </Link>
+                   
 
                     <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
                       <div className="flex flex-col gap-4">
