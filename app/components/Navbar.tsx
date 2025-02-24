@@ -29,7 +29,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScrollUpdate = () => {
       const scrollPosition = window.scrollY
-      const sections = ["ja", "faq", "services", "offers"]
+      const sections = ["ja", "faq", "cennik", "oferty"]
 
       for (const section of sections) {
         const element = document.getElementById(section)

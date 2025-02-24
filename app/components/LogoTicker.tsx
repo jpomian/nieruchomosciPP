@@ -12,8 +12,8 @@ export const LogoTicker = () => {
                 <h1 className='text-3xl font-bold text-center pb-2 px-6'>Organizacje</h1>
                 <h3 className="text-sm text-gray-400 mb-6">Dla których sporządzałam wyceny.</h3>
                 </div>
-                <div className='overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]'>
-                    <div className='flex gap-[96px] justify-center items-center'>
+                <div className='overflow-hidden'>
+                    <div className='flex flex-col md:flex-row gap-8 lg:gap-[92px] justify-center items-center'>
                         <Image src={millenniumLogo} alt='Millennium Bank' className='ticker' />
                         <Image src={santanderLogo} alt='Santander Bank' className='ticker' />
                         <Image src={sgbLogo} alt='SGB Bank' className='ticker' />

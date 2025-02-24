@@ -12,7 +12,7 @@ export default function PricingComponent() {
     ]
 
     return (
-        <div id="cennik" className="p-12 relative w-full border-t-2 border-b-2 border-dashed border-gray-300">
+        <section id="cennik" className="p-12 relative w-full border-t-2 border-b-2 border-dashed border-gray-300 scroll-mt md:scroll-mt-md lg:scroll-mt-lg">
             <Card className="w-full max-w-[1168px] mx-auto bg-sky-50 shadow-lg relative">
                 <div className="absolute top-4 right-4">
                     <Image 
@@ -49,6 +49,6 @@ export default function PricingComponent() {
                     </div>
                 </CardContent>
             </Card>
-        </div>
+        </section>
     )
 }

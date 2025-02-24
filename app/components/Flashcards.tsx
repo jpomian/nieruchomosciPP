@@ -88,7 +88,7 @@ export default function Flashcards() {
   }
 
   return (
-    <div id="faq" className="pb-12">
+    <section id="faq" className="pb-12 scroll-mt md:scroll-mt-md lg:scroll-mt-lg">
       <div className="flex flex-col justify-center items-center">
         <h1 className="flex justify-center text-3xl font-bold text-center pt-12 pb-2 px-6">
           Najczęściej zadawane pytania
@@ -139,6 +139,6 @@ export default function Flashcards() {
           animation: sparkle 0.5s ease-in-out;
         }
       `}</style>
-    </div>
+    </section>
   )
 }

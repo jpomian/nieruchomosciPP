@@ -74,7 +74,7 @@ export default function Carousel() {
   }
 
   return (
-    <div id='oferty' className="w-full px-4 sm:px-6 lg:px-8 py-12">
+    <section id='oferty' className="w-full px-4 sm:px-6 lg:px-8 py-12 scroll-mt md:scroll-mt-md lg:scroll-mt-lg">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-blue-500 text-center mb-6">
           Nieruchomości na sprzedaż
@@ -88,7 +88,7 @@ export default function Carousel() {
           <div
             className={`relative ${
               properties.length > 3
-                ? "overflow-x-scroll pb-8 -mx-4"
+                ? "overflow-x-scroll pb-8 -mx-4 custom-scroll"
                 : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
             } gap-12`}
           >
@@ -147,6 +147,6 @@ export default function Carousel() {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }
