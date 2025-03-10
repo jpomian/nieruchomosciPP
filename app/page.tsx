@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <LogoTicker />
       <Flashcards />
       <Pricing />
+      <LogoTicker />
       <Carousel />
     </>
   );

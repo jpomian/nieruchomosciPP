@@ -35,7 +35,7 @@ export default function Carousel() {
             `/api/scrape?url=${encodeURIComponent(offer.url)}`
           );
           if (!htmlResponse.ok)
-            throw new Error("Failed to fetch property data");
+            return null;
           const metadata = await htmlResponse.json();
 
           const firstImage =
@@ -56,7 +56,7 @@ export default function Carousel() {
         const propertyData = await Promise.all(propertyDataPromises);
         setProperties(propertyData.filter(Boolean));
       } catch {
-        setError("Failed to load property data");
+        setError("Chwilowo nie można wczytać ofert");
       } finally {
         setIsLoading(false);
       }
@@ -67,8 +67,8 @@ export default function Carousel() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center text-red-500 text-xl">
-        {error} - Please try again later
+      <div className="flex items-center justify-center my-6 text-blue-400 text-lg">
+        {error} - <a href='https://www.otodom.pl/pl/firmy/biura-nieruchomosci/wycena-nieruchomosci-elzbieta-pomianowska-kolenska-ID10640250' className="font-bold ml-2"> Sprawdź bezpośrednio na otodom.pl</a>
       </div>
     );
   }
