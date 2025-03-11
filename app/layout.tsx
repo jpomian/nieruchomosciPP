@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased ${inter.className}`}
+        className={`antialiased ${inter.className} flex flex-col min-h-screen`}
       >
-        {children}
+        <div className="flex-grow">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
