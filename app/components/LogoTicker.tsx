@@ -6,7 +6,7 @@ import drhouseLogo from '../assets/tickers/dr-house.png';
 
 export const LogoTicker = () => {
     return (
-        <div className='p-12 relative w-full border-b-2 border-dashed border-gray-300'>
+        <div className='p-10 relative w-full border-b-2 border-dashed border-gray-300'>
             <div className='container mx-auto'>
                 <div className='flex flex-col justify-center items-center'>
                 <h1 className='text-3xl font-bold text-center pb-2 px-6'>Organizacje</h1>

@@ -30,7 +30,7 @@ jobs:
 
       # Deploy to Linode VPS
       - name: Deploy to Linode
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SSH_USER }}
