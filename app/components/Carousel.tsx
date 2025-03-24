@@ -17,7 +17,7 @@ interface OfferData {
   url: string
 }
 
-export default function Carousel() {
+export default function CompactList() {
   const [properties, setProperties] = useState<PropertyData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -85,34 +85,17 @@ export default function Carousel() {
             <Spinner className="w-16 h-16 text-blue-500" />
           </div>
         ) : (
-          <div
-            className={`relative ${
-              properties.length > 3
-                ? "overflow-x-scroll pb-8 -mx-4 custom-scroll"
-                : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-            } gap-12`}
-          >
-            <div
-              className={`${
-                properties.length > 3
-                  ? "flex flex-nowrap space-x-12 px-4"
-                  : "contents"
-              }`}
-            >
-              {properties.map((property, index) => (
-                <div
-                  key={index}
-                  className={`group relative bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out overflow-hidden ${
-                    properties.length > 3
-                      ? "flex-none w-[calc(100vw-2rem)] md:w-[40vw] lg:w-[30vw]"
-                      : "w-full"
-                  }`}
-                >
-                  <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden">
-                    <Link
+          <div className="space-y-6">
+            {properties.map((property, index) => (
+              <div
+                key={index}
+                className="group flex items-center bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out overflow-hidden"
+              >
+                <div className="relative w-1/3 h-40 md:h-56 overflow-hidden">
+                  <Link
                     href={`nieruchomosc/${property.id}`}
                     className="block h-full w-full"
-                    >
+                  >
                     <Image
                       src={property.image}
                       alt={property.title}
@@ -125,25 +108,24 @@ export default function Carousel() {
                           "/default-image.jpg";
                       }}
                     />
+                  </Link>
+                </div>
+                <div className="flex flex-col p-4 w-2/3 gap-12 md:gap-20">
+                  <h3 className="text-xl font-bold text-blue-500 line-clamp-2">
+                    <Link
+                      href={`nieruchomosc/${property.id}`}
+                    >
+                      {property.title}
                     </Link>
-                   
-
-                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                      <div className="flex flex-col gap-4">
-                        <h3 className="text-3xl font-bold text-white/80 line-clamp-2 drop-shadow-2xl">
-                          {property.title}
-                        </h3>
-                        <div className="flex items-center gap-4">
-                          <span className="text-xl font-bold text-green-400/80">
-                            {property.price}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                  </h3>
+                  <div className="flex items-center gap-4 mt-2">
+                    <span className="text-lg font-bold text-green-400">
+                      {property.price}
+                    </span>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

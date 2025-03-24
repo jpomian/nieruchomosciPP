@@ -11,6 +11,7 @@ const OtoButton = ({ url }: { url: string }) => {
         rounded-lg
         px-8
         py-4
+        mb-8
         flex
         items-center
         gap-4
