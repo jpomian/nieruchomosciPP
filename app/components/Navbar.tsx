@@ -69,14 +69,14 @@ export default function Navbar() {
               <Link
                 href="#ja"
                 onClick={(e) => handleScroll(e, "ja")}
-                className={`anchor ${activeLink === "ja" ? "text-blue-500" : ""}`}
+                className={`anchor ${activeLink === "ja" ? "text-[#028965]" : ""}`}
               >
                 O mnie
               </Link>
               <Link
                 href="#faq"
                 onClick={(e) => handleScroll(e, "faq")}
-                className={`anchor ${activeLink === "faq" ? "text-blue-500" : ""}`}
+                className={`anchor ${activeLink === "faq" ? "text-[#028965]" : ""}`}
               >
                 Najczęściej zadawane pytania
               </Link>
@@ -84,14 +84,14 @@ export default function Navbar() {
               <Link
                 href="#cennik"
                 onClick={(e) => handleScroll(e, "cennik")}
-                className={`anchor ${activeLink === "cennik" ? "text-blue-500" : ""}`}
+                className={`anchor ${activeLink === "cennik" ? "text-[#028965]" : ""}`}
               >
                 Cennik
               </Link>
               <Link
                 href="#oferty"
                 onClick={(e) => handleScroll(e, "oferty")}
-                className={`anchor ${activeLink === "oferty" ? "text-blue-500" : ""}`}
+                className={`anchor ${activeLink === "oferty" ? "text-[#028965]" : ""}`}
               >
                 Oferty
               </Link>
@@ -113,14 +113,14 @@ export default function Navbar() {
         <Link
                 href="#ja"
                 onClick={(e) => handleScroll(e, "ja")}
-                className={`text-black/60 anchor ${activeLink === "ja" ? "text-blue-500" : ""}`}
+                className={`text-black/60 anchor ${activeLink === "ja" ? "text-[#028965]" : ""}`}
               >
                 O mnie
               </Link>
               <Link
                 href="#faq"
                 onClick={(e) => handleScroll(e, "faq")}
-                className={`text-black/60 anchor ${activeLink === "faq" ? "text-blue-500" : ""}`}
+                className={`text-black/60 anchor ${activeLink === "faq" ? "text-[#028965]" : ""}`}
               >
                 Najczęściej zadawane pytania
               </Link>
@@ -128,18 +128,18 @@ export default function Navbar() {
               <Link
                 href="#cennik"
                 onClick={(e) => handleScroll(e, "cennik")}
-                className={`text-black/60 anchor ${activeLink === "cennik" ? "text-blue-500" : ""}`}
+                className={`text-black/60 anchor ${activeLink === "cennik" ? "text-[#028965]" : ""}`}
               >
                 Cennik
               </Link>
               <Link
                 href="#oferty"
                 onClick={(e) => handleScroll(e, "oferty")}
-                className={`text-black/60 anchor ${activeLink === "oferty" ? "text-blue-500" : ""}`}
+                className={`text-black/60 anchor ${activeLink === "oferty" ? "text-[#028965]" : ""}`}
               >
                 Oferty
               </Link>
-          <button className="bg-blue-400 text-white px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight hover:bg-blue-500 transition-colors duration-200">
+          <button className="bg-[#028965] text-white px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight hover:bg-[#028965] transition-colors duration-200">
             Skontaktuj się
           </button>
         </nav>

@@ -25,11 +25,15 @@ a {
 
 @layer components {
   .highlight {
-    @apply font-bold text-blue-400 italic
+    @apply font-bold text-[#028965] italic
   }
 
   .primary-button {
-    @apply bg-blue-400 text-white rounded-lg font-medium inline-flex items-center justify-center tracking-tight hover:bg-blue-500 transition-colors duration-200
+    @apply bg-[#028965] text-white rounded-lg font-medium inline-flex items-center justify-center tracking-tight hover:bg-[#049770] transition-colors duration-200 border border-solid border-amber-400
+  }
+
+  .big-button {
+    @apply bg-[#028965] hover:bg-[#049770] border-2 border-solid border-amber-400 rounded-lg text-white px-12 md:py-8 py-6 mt-8 text-lg
   }
 
   .ticker {

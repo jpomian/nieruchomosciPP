@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
           <div className="flex justify-center">
             <Link href='#oferty'>
-            <button className="bg-[#4d5ef5] hover:bg-[#3544d2] border-2 border-solid border-blue-700 rounded-lg text-white px-12 md:py-8 py-6 mt-8 text-lg">
+            <button className="big-button">
               Zobacz aktualne nieruchomości na sprzedaż.
             </button>
             </Link>
