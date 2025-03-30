@@ -86,13 +86,13 @@ export default function ContactForm() {
         </div>
         {error && <p className="text-red-500">{error}</p>}
         <div className="flex justify-center items-center">
-          <Button className="bg-blue-500 hover:bg-blue-600" type="submit">
+          <Button className="bg-[#028965] hover:bg-green-600/50 transition duration-300 border border-solid border-amber-400" type="submit">
             Wyślij wiadomość
           </Button>
         </div>
       </form>
 
-      <Card className="w-1/2 p-6 flex flex-col items-center">
+      <Card className="w-2/3 p-6 bg-gray-100 flex flex-col items-center">
         <h2 className="text-2xl font-bold mb-4">Dziękujemy!</h2>
         <p className="mb-4">
           Jeśli masz jakiekolwiek pytania lub potrzebujesz dodatkowych
@@ -101,7 +101,7 @@ export default function ContactForm() {
         <p className="mb-2">
           Zapraszamy także do obserwowania naszych social media.
         </p>
-        <div className="flex flex-col sm:flex-row gap-8 mt-16">
+        <div className="flex flex-col sm:flex-row gap-8 mt-12">
             <Link
               href="https://www.instagram.com/nieruchomosci_pod_parasolem/"
               target="_blank"
@@ -109,7 +109,7 @@ export default function ContactForm() {
               className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-2 text-sm font-medium text-white transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
             >
               <Instagram className="mr-2 h-5 w-5" />
-              Sprawdź profil na Instagramie
+              Nieruchomości pod Parasolem
             </Link>
           </div>
       </Card>
