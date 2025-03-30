@@ -52,7 +52,7 @@ export default function HouseInfo({ characteristics }: HouseInfoProps) {
           <DetailItem icon={<BrickWall />} label={buildingType?.displayName || 'Rodzaj zabudowy'} value={getSafeValue(buildingType)} />
         </div>
         <div className="mt-6">
-          <Badge variant="secondary" className="w-full justify-center text-lg">
+          <Badge variant="secondary" className="w-full justify-center text-xl mt-4">
             Dostępne na sprzedaż!
           </Badge>
         </div>
@@ -64,7 +64,7 @@ export default function HouseInfo({ characteristics }: HouseInfoProps) {
 function DetailItem({ icon, label, value } : DetailItemProps) {
   return (
     <div className="flex items-center">
-      <div className="text-blue-900 mr-2">{icon}</div>
+      <div className="text-green-700 mr-2">{icon}</div>
       <div>
         <p className="text-sm text-gray-600">{label}</p>
         <p className="font-semibold text-gray-800">{value}</p>

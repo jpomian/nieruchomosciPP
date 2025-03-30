@@ -6,7 +6,7 @@ const OtoButton = ({ url }: { url: string }) => {
     <Link href={url}>
       <button
         className="
-        bg-[#71db71]
+        bg-green-600
         hover:bg-[#89ce8b]
         rounded-lg
         px-8

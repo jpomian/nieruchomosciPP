@@ -22,7 +22,7 @@ export default function PricingComponent() {
           <Image src={Logo} alt="Company Logo" width={80} height={40} />
         </div>
         <CardHeader>
-          <h2 className="text-4xl font-bold text-center text-green-900">
+          <h2 className="text-4xl font-bold text-center text-amber-500/90">
             Cennik
           </h2>
           <h3 className="text-sm text-gray-400 text-center mt-2">

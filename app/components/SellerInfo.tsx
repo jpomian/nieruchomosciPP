@@ -27,11 +27,11 @@ export default function SellerInfo() {
         {/* <Separator className="my-4" /> */}
         <div className="space-y-4 mt-4">
           <div className="flex items-center">
-            <Phone className="w-5 h-5 text-blue-900 mr-2" />
+            <Phone className="w-5 h-5 text-green-700 mr-2" />
             <p className="text-gray-700">782 014 827</p>
           </div>
           <div className="flex items-center">
-            <Mail className="w-5 h-5 text-blue-900 mr-2" />
+            <Mail className="w-5 h-5 text-green-700 mr-2" />
             <p className="text-gray-700">elzbieta.pomianowska@wp.pl</p>
           </div>
         </div>
