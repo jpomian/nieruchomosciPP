@@ -90,13 +90,13 @@ export default function Flashcards() {
   return (
     <section id="faq" className="pb-12 scroll-mt md:scroll-mt-md lg:scroll-mt-lg">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="flex justify-center text-3xl font-bold text-center pt-12 pb-2 px-6">
+        <h1 className="flex justify-center text-3xl font-bold text-center text-green-900 pt-12 pb-2 px-6">
           Najczęściej zadawane pytania
         </h1>
         <h3 className="text-sm text-gray-400 mb-6">Zadawane przez naszych klientów.</h3>
 
         <div className="flex justify-center items-center mb-8">
-          <p className="text-md text-gray-500">Pytania są skierowane od klientów potrzebujących pomocy <span className="highlight hover:text-sky-400 duration-300 cursor-pointer" onClick={() => handleFilter("W")}>rzeczoznawcy</span> lub <span className="font-bold text-green-500 hover:text-green-300 duration-300 cursor-pointer" onClick={() => handleFilter("P")}>pośrednika nieruchomości</span>.</p>
+          <p className="text-md text-gray-500">Pytania są skierowane od klientów potrzebujących pomocy <span className="highlight hover:text-green-450 duration-300 cursor-pointer" onClick={() => handleFilter("W")}>rzeczoznawcy</span> lub <span className="font-bold text-slate-600 hover:text-slate-400 duration-300 cursor-pointer" onClick={() => handleFilter("P")}>pośrednika nieruchomości</span>.</p>
         </div>
       </div>
 

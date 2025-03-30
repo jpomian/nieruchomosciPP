@@ -137,6 +137,6 @@ a {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gray-200 text-foreground;
   }
 }

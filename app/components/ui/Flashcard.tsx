@@ -29,7 +29,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ question, answers, type }) => {
 
   const getCardColor = () => {
     if (isRevealed) return "bg-white"
-    return type === "W" ? "bg-blue-400 hover:bg-blue-600" : "bg-green-400 hover:bg-green-600"
+    return type === "W" ? "bg-[#028965] hover:bg-green-450 border-2 border-solid border-amber-400" : "bg-slate-400 border-2 border-solid border-amber-400 hover:bg-slate-600"
   }
 
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -66,7 +66,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ question, answers, type }) => {
             {answers.map((_, index) => (
               <div
                 key={index}
-                className={`w-2 h-2 rounded-full ${index === currentAnswerIndex ? "bg-blue-500" : "bg-gray-300"}`}
+                className={`w-2 h-2 rounded-full ${index === currentAnswerIndex ? "bg-[#028965]" : "bg-gray-300"}`}
               />
             ))}
           </div>

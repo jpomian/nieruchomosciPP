@@ -58,7 +58,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-md transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gray/30 backdrop-blur-md transition-all duration-300">
       <div className="py-8">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
@@ -106,7 +106,7 @@ export default function Navbar() {
       </div>
       {/* Mobile menu */}
       <div
-        className={`md:hidden bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-screen" : "max-h-0"
+        className={`md:hidden bg-gray/80 backdrop-blur-md overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-screen" : "max-h-0"
           }`}
       >
         <nav className="flex flex-col gap-4 p-4">

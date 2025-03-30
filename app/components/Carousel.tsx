@@ -76,13 +76,13 @@ export default function CompactList() {
   return (
     <section id='oferty' className="w-full px-4 sm:px-6 lg:px-8 py-12 scroll-mt md:scroll-mt-md lg:scroll-mt-lg">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-blue-500 text-center mb-6">
+        <h1 className="text-3xl font-bold text-green-900 text-center mb-8">
           Nieruchomości na sprzedaż
         </h1>
 
         {isLoading ? (
           <div className="flex justify-center items-center h-[80vh]">
-            <Spinner className="w-16 h-16 text-blue-500" />
+            <Spinner className="w-16 h-16 text-[#028965]" />
           </div>
         ) : (
           <div className="space-y-6">
@@ -111,7 +111,7 @@ export default function CompactList() {
                   </Link>
                 </div>
                 <div className="flex flex-col p-4 w-2/3 gap-12 md:gap-20">
-                  <h3 className="text-xl font-bold text-blue-500 line-clamp-2">
+                  <h3 className="text-xl font-bold text-slate-700 line-clamp-2">
                     <Link
                       href={`nieruchomosc/${property.id}`}
                     >
@@ -119,7 +119,7 @@ export default function CompactList() {
                     </Link>
                   </h3>
                   <div className="flex items-center gap-4 mt-2">
-                    <span className="text-lg font-bold text-green-400">
+                    <span className="text-lg font-bold text-[#028965]">
                       {property.price}
                     </span>
                   </div>
