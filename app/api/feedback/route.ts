@@ -1,28 +1,33 @@
-import { NextResponse } from "next/server"
-import fs from "fs/promises"
-import path from "path"
+// app/api/feedbacks/route.ts
+import { getRedisClient } from '@/lib/db'
+import { NextResponse } from 'next/server'
 
-export async function POST(request: Request) {
-  const feedback = await request.json()
-  const id = Date.now().toString()
-  feedback.id = id
-
-  const filePath = path.join(process.cwd(), "data", "feedback.json")
-
+export async function GET() {
   try {
-    let feedbacks = []
-    try {
-      const fileContent = await fs.readFile(filePath, "utf-8")
-      feedbacks = JSON.parse(fileContent)
-    } catch {
-      console.log('Could not add feedback.')
-    }
-
-    feedbacks.push(feedback)
-    await fs.writeFile(filePath, JSON.stringify(feedbacks, null, 2))
-
-    return NextResponse.json({ message: "Feedback submitted successfully", id }, { status: 201 })
-  } catch {
-    return NextResponse.json({ message: "Failed to submit feedback" }, { status: 500 })
+    const client = await getRedisClient()
+    const keys = await client.keys('feedback:*')
+    
+    const feedbacks = await Promise.all(
+      keys.map(async (key) => {
+        const data = await client.hGetAll(key)
+        return {
+          id: key.replace('feedback:', ''),
+          name: data.name || 'Anonymous',
+          email: data.email || '',
+          phone: data.phone || '',
+          content: data.content || '',
+          createdAt: data.createdAt || '0',
+          status: data.status || 'new'
+        }
+      })
+    )
+    
+    return NextResponse.json(feedbacks)
+  } catch (err) {
+    console.error('API error:', err)
+    return NextResponse.json(
+      { error: 'Failed to fetch feedbacks' },
+      { status: 500 }
+    )
   }
 }
