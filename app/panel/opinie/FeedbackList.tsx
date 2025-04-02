@@ -59,15 +59,15 @@ export default function FeedbackList() {
     fetchFeedbacks();
   }, []);
 
-  if (state.loading) return <div className="p-4 text-center">Loading...</div>;
+  if (state.loading) return <div className="p-4 text-center">Ładowanie...</div>;
   if (state.error)
     return <div className="p-4 text-red-500 text-center">{state.error}</div>;
   if (state.feedbacks.length === 0)
-    return <div className="p-4 text-center">No feedbacks found</div>;
+    return <div className="p-4 text-center">Nie znaleziono zgłoszeń</div>;
 
   return (
     <div className="space-y-4 max-w-3xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-6">Customer Feedbacks</h2>
+      <h2 className="text-2xl font-bold mb-6">Zgłoszenia klientów</h2>
 
       {state.feedbacks.map((feedback) => (
         <div
@@ -110,6 +110,9 @@ export default function FeedbackList() {
           </div>
         </div>
       ))}
+      <Link href={'/'}>
+      <p className="flex justify-center my-8 text-lg">Wróć do strony głównej.</p>      
+      </Link>
     </div>
   );
 }

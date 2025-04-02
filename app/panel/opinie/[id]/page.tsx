@@ -29,12 +29,11 @@ async function getFeedbackById(id: string) {
   }
 }
 
-export default async function FeedbackDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const feedback = await getFeedbackById(params.id);
+type paramsType = Promise<{id: string}>
+
+export default async function FeedbackDetailPage(props: { params: Promise<paramsType> }) {
+  const { id } = await props.params
+  const feedback = await getFeedbackById(id);
 
   if (!feedback) {
     notFound();
