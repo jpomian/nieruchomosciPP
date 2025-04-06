@@ -7,7 +7,7 @@ const inter = Mulish({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Nieruchomości pod parasolem",
-  description: "Wycena i obrót nieruchomościami w Poznaniu",
+  description: "Wycena i obrót nieruchomościami w Poznaniu i okolicach. Działalność prowadzona przez specjalistę Elżbietę Pomianowską-Koleńską.",
 };
 
 export default function RootLayout({
