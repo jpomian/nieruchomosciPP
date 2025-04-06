@@ -6,7 +6,7 @@ import { Instagram } from "lucide-react"
 
 function ActionCall() {
   return (
-        <Card className="w-2/3 p-6 bg-gray-100 flex flex-col items-center">
+        <Card className="w-1/2 p-6 bg-gray-100 flex flex-col items-center">
         <h2 className="text-2xl font-bold mb-4">Dziękujemy!</h2>
         <p className="mb-4">
           Jeśli masz jakiekolwiek pytania lub potrzebujesz dodatkowych
