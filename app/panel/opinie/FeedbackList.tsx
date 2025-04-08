@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from 'next/image'
+import Logo from '../../assets/logo-transparent.png'
+import FeedbackItem from "./FeedbackItem";
 
 interface Feedback {
   id: string;
@@ -10,7 +13,7 @@ interface Feedback {
   phone: string;
   content: string;
   createdAt: string;
-  status: string;
+  status: "new" | "read"
 }
 
 export default function FeedbackList() {
@@ -67,47 +70,28 @@ export default function FeedbackList() {
 
   return (
     <div className="space-y-4 max-w-3xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-6">Zgłoszenia klientów</h2>
-
+      <div className="flex flex-row gap-4 items-center justify-center">
+        <Image
+        src={Logo}
+        alt="Logo"
+        className="h-[2lh] w-auto"
+        />
+      <h2 className="text-2xl font-bold leading-none">Zgłoszenia klientów</h2>
+      </div>
       {state.feedbacks.map((feedback) => (
         <div
           key={feedback.id}
           className="border p-4 rounded-lg bg-white shadow"
         >
-          <div className="flex justify-between items-start mb-3">
-            <Link href={`opinie/${feedback.id}`}>
-              <h3 className="font-bold text-xl hover:text-gray-500">{feedback.name}</h3>
-            </Link>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">
-                {new Date(parseInt(feedback.createdAt)).toLocaleString()}
-              </span>
-              <span
-                className={`px-2 py-1 text-xs rounded-full ${
-                  feedback.status === "new"
-                    ? "bg-amber-100 text-amber-800"
-                    : "bg-green-100 text-green-800"
-                }`}
-              >
-                {feedback.status}
-              </span>
-            </div>
-          </div>
-
-          <p className="text-gray-700 mb-4">{feedback.content}</p>
-
-          <div className="flex flex-wrap gap-2">
-            {feedback.email && (
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                {feedback.email}
-              </span>
-            )}
-            {feedback.phone && (
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-                {feedback.phone}
-              </span>
-            )}
-          </div>
+          <FeedbackItem
+              key={feedback.id}
+              id={feedback.id}
+              name={feedback.name}
+              email={feedback.email}
+              phone={feedback.phone}
+              content={feedback.content}
+              status={feedback.status}
+            />
         </div>
       ))}
       <Link href={'/'}>
