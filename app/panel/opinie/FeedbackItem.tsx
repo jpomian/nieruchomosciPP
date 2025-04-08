@@ -57,7 +57,7 @@ export default function FeedbackItem({ id, name, email, phone, content, status }
             currentStatus === "new" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"
           }`}
         >
-          {currentStatus === "new" ? "Nowa wiadomość" : "Przeczytano"}
+          {!isLoading ? (currentStatus === "new" ? "Nowa wiadomość" : "Przeczytano") : "Trwa ładowanie..."}
         </span>
       </div>
 
