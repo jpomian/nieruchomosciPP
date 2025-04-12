@@ -91,3 +91,21 @@ export async function updateFeedbackStatus(
     return { error: "Failed to update status" };
   }
 }
+
+export async function deleteFeedback(id: string): Promise<{ error?: string }> {
+  const client = await getRedisClient()
+
+  try {
+    const feedback = await client.hGetAll(`feedback:${id}`)
+    if (!feedback.id) {
+      return { error: "Feedback not found" }
+    }
+
+    await client.del(`feedback:${id}`)
+
+    return {}
+  } catch (error) {
+    console.error("Failed to delete feedback:", error)
+    return { error: "Failed to delete feedback" }
+  }
+}
