@@ -86,47 +86,65 @@ export default function CompactList() {
           </div>
         ) : (
           <div className="space-y-6">
-            {properties.map((property, index) => (
-              <div
-                key={index}
-                className="group flex items-center bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out overflow-hidden"
-              >
-                <div className="relative w-1/3 h-40 md:h-56 overflow-hidden">
-                  <Link
-                    href={`nieruchomosc/${property.id}`}
-                    className="block h-full w-full"
-                  >
-                    <Image
-                      src={property.image}
-                      alt={property.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src =
-                          "/default-image.jpg";
-                      }}
-                    />
-                  </Link>
-                </div>
-                <div className="flex flex-col p-4 w-2/3 gap-12 md:gap-20">
-                  <h3 className="text-xl font-bold text-slate-700 line-clamp-2">
-                    <Link
-                      href={`nieruchomosc/${property.id}`}
-                    >
-                      {property.title}
-                    </Link>
-                  </h3>
-                  <div className="flex items-center gap-4 mt-2">
-                    <span className="text-lg font-bold text-[#028965]">
-                      {property.price}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+  {properties.map((property, index) => (
+    <div
+      key={index}
+      className="group flex items-center bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out overflow-hidden relative"
+    >
+      <button
+        onClick={() => navigator.clipboard.writeText(`https://nieruchomoscipodparasolem.pl/nieruchomosc/${property.id}`)}
+        className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors"
+        title="Copy to clipboard"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-gray-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+          />
+        </svg>
+      </button>
+
+      <div className="relative w-1/3 h-40 md:h-56 overflow-hidden">
+        <Link
+          href={`nieruchomosc/${property.id}`}
+          className="block h-full w-full"
+        >
+          <Image
+            src={property.image}
+            alt={property.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "/default-image.jpg";
+            }}
+          />
+        </Link>
+      </div>
+      <div className="flex flex-col p-4 w-2/3 gap-12 md:gap-20">
+        <h3 className="text-xl font-bold text-slate-700 line-clamp-2">
+          <Link href={`nieruchomosc/${property.id}`}>
+            {property.title}
+          </Link>
+        </h3>
+        <div className="flex items-center gap-4 mt-2">
+          <span className="text-lg font-bold text-[#028965]">
+            {property.price}
+          </span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
         )}
       </div>
     </section>

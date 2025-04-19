@@ -33,7 +33,7 @@ export default async function PropertyOffer(
   const propertyData = JSON.parse(metadata);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-[80vh]-screen bg-gray-100">
       <Navbar2 />
 
       <main className="container mx-auto px-4 py-8 mt-16">
