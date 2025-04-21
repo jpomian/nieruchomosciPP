@@ -24,7 +24,6 @@ export default function AddOfferForm() {
 
       if (response.ok) {
         alert("Dodano nową nieruchomość.")
-        router.push("/")
         router.refresh()
       } else {
         alert("Błąd serwera.")

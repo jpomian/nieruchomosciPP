@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { updateFeedbackStatus, deleteFeedback } from "@/lib/create";
+import { updateFeedbackStatus, deleteFeedback } from "@/lib/crud-feedback";
 import { Trash, MailCheck, MailOpen, Loader2 } from "lucide-react";
 
 interface FeedbackItemProps {

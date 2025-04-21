@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { createFeedback } from '../../lib/create'
+import { createFeedback } from '../../lib/crud-feedback'
 
 
 interface FeedbackForm {

@@ -6,7 +6,6 @@ let client: ReturnType<typeof createClient>;
 export async function getRedisClient() {
   if (!client) {
     client = createClient({
-      username: process.env.REDIS_USER,
       password: process.env.REDIS_PW,
       socket: {
         host: process.env.REDIS_HOST,

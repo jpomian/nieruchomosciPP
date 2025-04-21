@@ -35,7 +35,7 @@ export default function OfferList({ initialOffers }: OfferListProps) {
       {offers.map((offer) => (
         <div key={offer.id} className="flex items-center justify-between mb-2">
           <Link href={`/nieruchomosc/${offer.id}`}>
-          <span>{offer.url}</span>
+            <span>{offer.url}</span>
           </Link>
           <button
             onClick={() => handleDelete(offer.id)}

@@ -1,6 +1,7 @@
 import { Terminal } from "lucide-react";
 import Logo from '../assets/logo-transparent.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -29,8 +30,9 @@ const Footer = () => {
                 <hr className="my-6 border-t border-gray-300" />
                 <div className="flex flex-col sm:flex-row justify-center text-gray-500 text-sm pt-2">
                     Twórcą strony jest&nbsp;
-                    <Terminal size={16} className="mt-1 hidden md:block" /> <a href="https://jpomian.pl" className='anchor'>Jędrzej Pomianowski</a>.
+                    <Terminal size={16} className="mt-1 mr-1 hidden md:block" /> <a href="https://jpomian.pl" className='anchor mr-1'>Jędrzej Pomianowski.</a>
                     Wszelkie prawa zastrzeżone &copy; 2025.
+                    <Link href='/panel/' className="md:ml-1"> Panel</Link> 
                 </div>
             </div>
         </footer>

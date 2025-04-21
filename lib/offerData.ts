@@ -1,43 +1,84 @@
-import fs from "fs/promises"
-import path from "path"
+"use server";
 
-interface offerData {
-    id: string,
-    url: string,
+import { getRedisClient } from "./db";
+
+interface OfferData {
+  id: string;
+  url: string;
 }
 
-const dataFilePath = path.join(process.cwd(), "data", "offers.json")
-
-export async function getPropertyOffers(): Promise<offerData[]> {
+export async function getPropertyOffers(): Promise<OfferData[]> {
+  const client = await getRedisClient();
+  
   try {
-    const data = await fs.readFile(dataFilePath, "utf8")
-    if(!data) {
-        return []
+    const keys = await client.keys('offer:*');
+    const offers = [];
+    
+    for (const key of keys) {
+      const offer = await client.hGetAll(key);
+      offers.push({
+        id: offer.id,
+        url: offer.url,
+      });
     }
-    return JSON.parse(data)
+    
+    return offers;
   } catch (error) {
-    console.error("Error reading property data:", error)
-    return []
+    console.error("Error reading property offers from Redis:", error);
+    return [];
   }
 }
 
-export async function getPropertyOffer(id: string): Promise<offerData | undefined> {
-  const offers = await getPropertyOffers()
-  return offers.find((offer) => offer.id === id)
+export async function getPropertyOffer(id: string): Promise<OfferData | undefined> {
+  const client = await getRedisClient();
+  
+  try {
+    const offer = await client.hGetAll(`offer:${id}`);
+    if (!offer.id) {
+      return undefined;
+    }
+    
+    return {
+      id: offer.id,
+      url: offer.url,
+    };
+  } catch (error) {
+    console.error(`Error reading property offer ${id} from Redis:`, error);
+    return undefined;
+  }
 }
 
-export async function addPropertyOffer(offer: Omit<offerData, "id">): Promise<void> {
-  const offers = await getPropertyOffers()
-  const newOffer = {
+export async function addPropertyOffer(offer: Omit<OfferData, "id">): Promise<void> {
+  const client = await getRedisClient();
+  
+  const newOffer: OfferData = {
     ...offer,
     id: Date.now().toString(),
+  };
+
+  try {
+    await client.hSet(`offer:${newOffer.id}`, {
+      id: newOffer.id,
+      url: newOffer.url,
+    });
+  } catch (error) {
+    console.error("Error adding property offer to Redis:", error);
+    throw error;
   }
-  offers.push(newOffer)
-  await fs.writeFile(dataFilePath, JSON.stringify(offers, null, 2))
 }
 
 export async function deletePropertyOffer(id: string): Promise<void> {
-  const offers = await getPropertyOffers()
-  const updatedOffers = offers.filter((offer) => offer.id !== id)
-  await fs.writeFile(dataFilePath, JSON.stringify(updatedOffers, null, 2))
+  const client = await getRedisClient();
+  
+  try {
+    const exists = await client.exists(`offer:${id}`);
+    if (!exists) {
+      throw new Error(`Offer with id ${id} not found`);
+    }
+    
+    await client.del(`offer:${id}`);
+  } catch (error) {
+    console.error(`Error deleting property offer ${id} from Redis:`, error);
+    throw error;
+  }
 }

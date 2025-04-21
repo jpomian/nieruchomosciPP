@@ -3,10 +3,11 @@ import OfferList from "../../components/OfferList"
 import { getPropertyOffers } from "../../../lib/offerData"
 import Carousel from "../../components/Carousel"
 import Navbar2 from "@/app/components/Navbar2"
+import Navigator from "@/app/components/ui/navigate";
+
 
 export const metadata = {
   title: "Pod Parasolem - Panel Admin",
-  description: "Dostęp dla uprawnionych",
 }
 
 export default async function AddPropertyPage() {
@@ -16,12 +17,12 @@ export default async function AddPropertyPage() {
     <div className="container mx-auto px-4 py-8">
       <Navbar2 />
       <div className="h-16"></div>
-      <h1 className="text-3xl font-bold mb-8">Aktualne oferty</h1>
-      <OfferList initialOffers={offers} />
-      <h2 className="text-2xl font-bold my-8">Dodaj nową ofertę</h2>
+      <h2 className="text-2xl font-bold my-4">Dodaj nową ofertę</h2>
       <AddOfferForm />
-      <h2>Oferty</h2>
+      <h1 className="text-3xl font-bold mt-8">Aktualne oferty</h1>
+      <OfferList initialOffers={offers} />
       <Carousel />
+      <Navigator />
     </div>
   )
 }
