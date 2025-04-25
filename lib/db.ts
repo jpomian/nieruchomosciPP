@@ -8,7 +8,7 @@ export async function getRedisClient() {
     client = createClient({
       password: process.env.REDIS_PW,
       socket: {
-        host: process.env.REDIS_HOST,
+        host: '172.105.94.208',
         port: parseInt(process.env.REDIS_PORT || '6379'),
         family: 4
       }
