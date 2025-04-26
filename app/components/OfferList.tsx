@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface Offer {
   id: string
@@ -13,14 +13,38 @@ interface OfferListProps {
 }
 
 export default function OfferList({ initialOffers }: OfferListProps) {
-  const [offers, setOffers] = useState(initialOffers)
+  const [reactOffers, setReactOffers] = useState(initialOffers)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/offers");
+        if (!response.ok) throw new Error("Failed to fetch offers");
+        const offers = await response.json();
+
+        const offerIDs = offers.map(async (offer: Offer) => {
+          return {
+            id: offer.id,
+            url: offer.url
+          }
+        })
+
+        const offerData = await Promise.all(offerIDs)
+        setReactOffers(offerData)
+      } catch {
+        console.log('Error occured when fetching offer data.')
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleDelete = async (id: string) => {
     try {
       const response = await fetch(`/api/offers?id=${id}`, { method: "DELETE" })
       if (response.ok) {
         alert("Usunięto nieruchomość.")
-        setOffers(offers.filter((offer) => offer.id !== id))
+        setReactOffers(reactOffers.filter((offer) => offer.id !== id))
       } else {
         alert("Błąd serwera.")
         console.error("Failed to delete offer")
@@ -32,7 +56,7 @@ export default function OfferList({ initialOffers }: OfferListProps) {
 
   return (
     <div>
-      {offers.map((offer) => (
+      {reactOffers.map((offer) => (
         <div key={offer.id} className="flex items-center justify-between mb-2">
           <Link href={`/nieruchomosc/${offer.id}`}>
             <span>{offer.url}</span>
