@@ -48,7 +48,7 @@ export default function Form() {
       const response = await createFeedback(formData)
 
       if (!response?.error) {
-        router.push("/kontakt")
+        router.push("/thank-you")
       } else {
         throw new Error("Request failed")
       }
@@ -58,7 +58,7 @@ export default function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 w-full">
       <div>
         <label htmlFor="name" className="block mb-1">Imię i nazwisko</label>
         <input
@@ -111,7 +111,7 @@ export default function Form() {
 
       <button
         type="submit"
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-700/70"
       >
         Wyślij
       </button>
