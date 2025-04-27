@@ -1,8 +1,8 @@
-// app/login/page.tsx
 'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link'
 import Image from 'next/image';
 import Logo from '../assets/logo-transparent.png';
 
@@ -31,7 +31,7 @@ export default function LoginPage() {
       } else {
         setError('Błędne hasło.');
       }
-    } catch (err) {
+    } catch {
       setError('Wystąpił błąd #444. Napisz wiadomość do administratora.');
     }
   };
@@ -64,8 +64,11 @@ export default function LoginPage() {
             type="submit"
             className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-500"
           >
-            Zaloguj się (24 H)
+            Zaloguj się (24H)
           </button>
+          <Link href='/' className='flex items-center justify-center py-2 px-4 rounded-lg border hover:bg-gray-100 mt-4 text-sm'>
+            Powrót do strony głównej
+          </Link>
         </form>
       </div>
     </div>
