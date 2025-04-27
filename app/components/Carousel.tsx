@@ -21,6 +21,7 @@ export default function CompactList() {
   const [properties, setProperties] = useState<PropertyData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,6 +65,18 @@ export default function CompactList() {
     fetchData();
   }, []);
 
+  const handleCopyClick = async (id: string) => {
+    try {
+      await navigator.clipboard.writeText(
+        `https://nieruchomoscipodparasolem.pl/nieruchomosc/${id}`
+      );
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000); // Reset after 2 seconds
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
+
   if (error) {
     return (
       <div className="flex items-center justify-center my-6 text-blue-400 text-lg">
@@ -101,33 +114,46 @@ export default function CompactList() {
                 className="group flex items-center bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out overflow-hidden relative"
               >
                 <button
-                  onClick={() =>
-                    navigator.clipboard.writeText(
-                      `https://nieruchomoscipodparasolem.pl/nieruchomosc/${property.id}`
-                    )
-                  }
+                  onClick={() => handleCopyClick(property.id)}
                   className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors"
-                  title="Copy to clipboard"
+                  title="Skopiuj do schowka"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-gray-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
-                    />
-                  </svg>
+                  {copiedId === property.id ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-green-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-gray-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+                      />
+                    </svg>
+                  )}
                 </button>
 
                 <div className="relative w-1/3 h-40 md:h-56 overflow-hidden">
                   <Link
-                    href={`nieruchomosc/${property.id}`}
+                    href={`/nieruchomosc/${property.id}`}
                     className="block h-full w-full"
                   >
                     <Image
@@ -146,7 +172,7 @@ export default function CompactList() {
                 </div>
                 <div className="flex flex-col p-4 w-2/3 gap-12 md:gap-20">
                   <h3 className="text-xl font-bold text-slate-700 line-clamp-2">
-                    <Link href={`nieruchomosc/${property.id}`}>
+                    <Link href={`/nieruchomosc/${property.id}`}>
                       {property.title}
                     </Link>
                   </h3>
