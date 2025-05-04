@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link'
 import Image from 'next/image';
 import Logo from '../assets/logo-transparent.png';
+import Head from 'next/head'
 
 export default function LoginPage() {
   const [password, setPassword] = useState('');
@@ -38,13 +39,18 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
+      <Head>
+        <title>Panel Pod Parasolem - Zaloguj sie</title>
+        <meta property="og:title" content="Zaloguj sie" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="bg-white p-8 rounded shadow-md w-96">
-      <div className="flex items-center justify-center mb-6">
-                    <Image src={Logo} alt='Nieruchomości Pod Parasolem' width={70} height={70} className="mr-4" />
-                    <div className="text-gray-700 text-xl font-bold">
-                        Panel Administratora
-                    </div>
-                </div>
+        <div className="flex items-center justify-center mb-6">
+          <Image src={Logo} alt='Nieruchomości Pod Parasolem' width={70} height={70} className="mr-4" />
+          <div className="text-gray-700 text-xl font-bold">
+            Panel Administratora
+          </div>
+        </div>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

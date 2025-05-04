@@ -29,7 +29,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ question, answers, type }) => {
 
   const getCardColor = () => {
     if (isRevealed) return "bg-white"
-    return type === "W" ? "bg-[#028965] hover:bg-green-450 border-2 border-solid border-amber-400" : "bg-slate-400 border-2 border-solid border-amber-400 hover:bg-slate-600"
+    return type === "W" ? "bg-[#028965] hover:bg-green-600 border-2 border-solid border-amber-400" : "bg-slate-400 border-2 border-solid border-amber-400 hover:bg-slate-600"
   }
 
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
