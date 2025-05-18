@@ -10,6 +10,7 @@ import Head from 'next/head'
 export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false)
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,6 +29,7 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (data.success) {
+        setSuccess(true)
         router.push('/panel'); // Redirect to your protected page
       } else {
         setError('Błędne hasło.');
@@ -52,6 +54,7 @@ export default function LoginPage() {
           </div>
         </div>
         {error && <p className="text-red-500 mb-4">{error}</p>}
+        {(!error && success) && <>Sukces. <Link href='/panel' className='text-green-600 ml-1 mb-4'>Przejdź do panelu.</Link></>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="password" className="block text-sm font-medium mb-2">
