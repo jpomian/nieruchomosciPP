@@ -51,7 +51,7 @@ export default function Flashcards() {
     },
     {
       question: "Jaki jest koszt wyceny?",
-      answers: ["Zjedź niżej w celu zobaczenia cennika 😏."],
+      answers: ["Zjedź niżej w celu zapoznania się z cennikiem."],
       type: "W",
     },
     {

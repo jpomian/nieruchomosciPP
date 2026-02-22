@@ -13,7 +13,7 @@ export default function SellerInfo() {
           <div className="relative w-16 h-16">
             <Image
               src={Profile}
-              alt="Seller's photo"
+              alt="Fotografia sprzedającego"
               width={64}
               height={64}
               className="rounded-full object-cover"
@@ -28,7 +28,7 @@ export default function SellerInfo() {
         <div className="space-y-4 mt-4">
           <div className="flex items-center">
             <Phone className="w-5 h-5 text-green-700 mr-2" />
-            <p className="text-gray-700">782 014 827</p>
+            <p className="text-gray-700">48 782 014 827</p>
           </div>
           <div className="flex items-center">
             <Mail className="w-5 h-5 text-green-700 mr-2" />

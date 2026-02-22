@@ -53,7 +53,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        <div className="relative h-[700px] shadow-md">
+        <div className="relative h-[700px] rounded-lg border border-amber-400 shadow-md">
           <Image
             src={Photo || "/placeholder.svg"}
             alt="Elżbieta Pomianowska-Koleńska"

@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="flex flex-col sm:flex-row justify-center text-gray-500 text-sm pt-2">
                     Twórcą strony jest&nbsp;
                     <Terminal size={16} className="mt-1 mr-1 hidden md:block" /> <a href="https://jpomian.pl" className='anchor mr-1'>Jędrzej Pomianowski.</a>
-                    Wszelkie prawa zastrzeżone &copy; 2025.
+                    Wszelkie prawa zastrzeżone &copy; 2026.
                     <Link href='/panel/' className="md:ml-1"> Panel</Link> 
                 </div>
             </div>
