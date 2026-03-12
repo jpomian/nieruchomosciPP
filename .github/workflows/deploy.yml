@@ -25,7 +25,9 @@ jobs:
       # Build and push Docker images
       - name: Build and push NPP
         run: |
-          docker build -t ghcr.io/jpomian/nieruchomoscipodparasolem:latest -f Dockerfile .
+          docker build \
+          --build-arg NEXT_SERVER_ACTIONS_ENCRYPTION_KEY="${{ secrets.SPECIAL_KEY }}" \
+          -t ghcr.io/jpomian/nieruchomoscipodparasolem:latest -f Dockerfile .
           docker push ghcr.io/jpomian/nieruchomoscipodparasolem:latest
 
       # Deploy to Linode VPS

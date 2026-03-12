@@ -111,7 +111,7 @@ export default function Form() {
 
       <button
         type="submit"
-        className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-700/70"
+        className="px-4 py-2 bg-green-700 transition duration-300 text-white rounded hover:bg-green-600/70"
       >
         Wyślij
       </button>

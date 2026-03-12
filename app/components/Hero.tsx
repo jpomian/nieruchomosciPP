@@ -36,7 +36,7 @@ export default function Hero() {
               marzeń albo element trudnych życiowych decyzji. Jako{" "}
               <span className="highlight">rzeczoznawca majątkowy</span>,{" "}
               <span className="highlight">biegły sądowy</span> oraz{" "}
-              <span className="highlight">pośrednik nieruchomści</span>, chętnie
+              <span className="highlight">pośrednik nieruchomości</span>, chętnie
               pomogę rozwiązać Wasze nieruchomościowe problemy 😊
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        <div className="relative h-[700px] rounded-lg border border-amber-400 shadow-md">
+        <div className="relative h-[700px] rounded-lg border border-gray-400 shadow-xl">
           <Image
             src={Photo || "/placeholder.svg"}
             alt="Elżbieta Pomianowska-Koleńska"

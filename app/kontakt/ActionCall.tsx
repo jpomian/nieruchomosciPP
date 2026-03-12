@@ -13,7 +13,7 @@ function ActionCall() {
           informacji, prosimy o kontakt za pomocą tego formularza. Udzielam bezpłatnych <span className="highlight">45 minutowych konsultacji</span> przed przeprowadzeniem wyceny.
         </p>
         <p className="mb-2">
-          Zapraszamy także do obserwowania naszych social media.
+          Zapraszamy także do obserwowania naszych social media ze świata pośrednictwa.
         </p>
         <div className="flex flex-col sm:flex-row gap-8 mt-12">
             <Link

@@ -33,7 +33,7 @@ a {
   }
 
   .big-button {
-    @apply bg-[#028965] hover:bg-[#049770] border-2 border-solid border-amber-400 rounded-lg text-white px-12 md:py-8 py-6 mt-8 text-lg
+    @apply bg-[#028965] hover:bg-[#049770] border-2 border-solid border-amber-500 rounded-lg text-white px-12 md:py-8 py-6 mt-8 text-lg
   }
 
   .ticker {
