@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
-import { MatomoTracker } from "./components/MatomoTracker";
+import { CookieConsent } from './components/Cookies'
 
 const inter = Mulish({ subsets: ['latin'] })
 
@@ -23,7 +23,7 @@ export default function RootLayout({
       >
         <div className="flex-grow">
           {children}
-          <MatomoTracker />
+          <CookieConsent />
         </div>
         <Footer />
       </body>
