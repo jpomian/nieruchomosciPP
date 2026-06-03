@@ -29,7 +29,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScrollUpdate = () => {
       const scrollPosition = window.scrollY
-      const sections = ["ja", "faq", "cennik", "oferty"]
+      const sections = ["zespol", "faq", "cennik", "oferty"]
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -62,16 +62,16 @@ export default function Navbar() {
       <div className="py-8">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
-            <Link href="/" onClick={(e) => handleScroll(e, "ja")}>
+            <Link href="/" onClick={(e) => handleScroll(e, "zespol")}>
               <Image src={Logo || "/placeholder.svg"} alt="Nieruchomości pod parasolem" height={80} width={80} className="ml-4 md:ml-8" />
             </Link>
             <nav className="hidden md:flex gap-6 text-black/60 items-center pr-4 md:pr-8">
               <Link
-                href="#ja"
-                onClick={(e) => handleScroll(e, "ja")}
-                className={`anchor ${activeLink === "ja" ? "text-[#028965]" : ""}`}
+                href="#zespol"
+                onClick={(e) => handleScroll(e, "zespol")}
+                className={`anchor ${activeLink === "zespol" ? "text-[#028965]" : ""}`}
               >
-                O mnie
+                Zespół
               </Link>
               <Link
                 href="#faq"

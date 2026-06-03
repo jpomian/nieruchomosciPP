@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { Phone, Mail } from "lucide-react"
 import { Card, CardContent } from "./ui/card"
-import Profile from '../assets/photo-squared.png'
 // import { Separator } from "./ui/separator"
 
 export default function SellerInfo() {
@@ -12,7 +11,7 @@ export default function SellerInfo() {
         <div className="flex items-center space-x-4">
           <div className="relative w-16 h-16">
             <Image
-              src={Profile}
+              src="/photo-ela.png"
               alt="Fotografia sprzedającego"
               width={64}
               height={64}
