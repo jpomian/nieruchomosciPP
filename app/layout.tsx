@@ -3,6 +3,7 @@ import { Mulish } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import { CookieConsent } from './components/Cookies'
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Mulish({ subsets: ['latin'] })
 
@@ -18,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Analytics />
       <body
         className={`antialiased ${inter.className} flex flex-col min-h-screen`}
       >
