@@ -14,6 +14,27 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  async rewrites() {
+    const analyticsHost = process.env.ANALYTICS_PROXY_HOST;
+
+    if (!analyticsHost) {
+      // No host configured -> no proxying. Avoids broken rewrites in local dev.
+      return [];
+    }
+
+    return [
+      {
+        source: "/_vercel/insights/:path*",
+        destination: `${analyticsHost}/_vercel/insights/:path*`,
+      },
+      {
+        source: "/_vercel/speed-insights/:path*",
+        destination: `${analyticsHost}/_vercel/speed-insights/:path*`,
+      },
+    ];
+  },
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find(
