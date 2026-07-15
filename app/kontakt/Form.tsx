@@ -60,30 +60,6 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4 w-full">
       <div>
-        <label htmlFor="name" className="block mb-1">Imię i nazwisko</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="phone" className="block mb-1">Telefon</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        />
-      </div>
-
-      <div>
         <label htmlFor="email" className="block mb-1">E-mail</label>
         <input
           type="email"

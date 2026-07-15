@@ -13,25 +13,22 @@ const slides = [
       <>
         Jestem Ela i po 13 latach pracy w banku jako analityk nieruchomości
         otworzyłam swoją własną firmę „
-        <span className="highlight">
-          Nieruchomości pod parasolem
-        </span>
+        <span className="highlight">Nieruchomości pod parasolem</span>
         ".
       </>,
       <>
         Dlaczego pod parasolem? Babcia zawsze powtarzała, że wszyscy chcą
         znaleźć się pod moim parasolem, ponieważ czują się tam bezpiecznie. I
-        taka jest moja misja – dbać o to, aby Wasze nieruchomości były gruntownie
-        sprawdzone, dobrze wycenione a proces sprzedaży bezpieczny.
+        taka jest moja misja – dbać o to, aby Wasze nieruchomości były
+        gruntownie sprawdzone, dobrze wycenione a proces sprzedaży bezpieczny.
       </>,
       <>
         Rozumiem, że nieruchomości to często dorobek życia, spełnienie marzeń
         albo element trudnych życiowych decyzji. Jako{" "}
-        <span className="highlight">rzeczoznawca majątkowy</span>
-        ,{" "}
+        <span className="highlight">rzeczoznawca majątkowy</span>,{" "}
         <span className="highlight">biegły sądowy</span> oraz{" "}
-        <span className="highlight">pośrednik nieruchomości</span>
-        , chętnie pomogę rozwiązać Wasze nieruchomościowe problemy
+        <span className="highlight">pośrednik nieruchomości</span>, chętnie
+        pomogę rozwiązać Wasze nieruchomościowe problemy
       </>,
     ],
     buttonText: "Zobacz nieruchomości na sprzedaż.",
@@ -44,8 +41,9 @@ const slides = [
     title: "Aleksandra Biela",
     paragraphs: [
       <>
-        Jestem Ola i po 15 latach pracy w korporacji zdecydowałam się dołączyć do Eli,
-        żeby wspólnie działać w "<span className="highlight-blue">Nieruchomościach pod parasolem</span>".
+        Jestem Ola i po 15 latach pracy w korporacji zdecydowałam się dołączyć
+        do Eli, żeby wspólnie działać w "
+        <span className="highlight-blue">Nieruchomościach pod parasolem</span>".
       </>,
       <>
         Dlaczego?
@@ -57,10 +55,23 @@ const slides = [
       <>
         Moje mocne strony:
         <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li>jestem twardą negocjatorką, do czego przygotowała mnie kilkuletnia praca w windykacji </li>
-          <li>mam wiedzę ekonomiczną, znam zasady działania rynku, które poznałam na studiach ekonomicznych</li>
-          <li>umiem prezentować, przez 5 lat prowadziłam szkolenia twarde i miękkie</li>
-          <li>przyjaźnie współpracuję z ludźmi, dzięki kilkunastoletniemu doświadczeniu w pracy z klientami i współpracownikami w 2 międzynarodowych korporacjach</li>
+          <li>
+            jestem twardą negocjatorką, do czego przygotowała mnie kilkuletnia
+            praca w windykacji{" "}
+          </li>
+          <li>
+            mam wiedzę ekonomiczną, znam zasady działania rynku, które poznałam
+            na studiach ekonomicznych
+          </li>
+          <li>
+            umiem prezentować, przez 5 lat prowadziłam szkolenia twarde i
+            miękkie
+          </li>
+          <li>
+            przyjaźnie współpracuję z ludźmi, dzięki kilkunastoletniemu
+            doświadczeniu w pracy z klientami i współpracownikami w 2
+            międzynarodowych korporacjach
+          </li>
         </ul>
       </>,
     ],
@@ -76,6 +87,7 @@ export default function Hero() {
   const [firstViewed, setFirstViewed] = useState<boolean[]>([false, false]);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const count = slides.length;
+  const TIMER = 9700;
 
   // Auto-scroll logic: scroll exactly once (0 -> 1) after 5 seconds on each slide, then stop
   useEffect(() => {
@@ -95,7 +107,7 @@ export default function Hero() {
       } else {
         setIsAutoPlaying(false);
       }
-    }, 5000);
+    }, TIMER);
 
     return () => clearTimeout(timer);
   }, [current, isAutoPlaying, count]);
@@ -161,8 +173,11 @@ export default function Hero() {
         {/* Slides Container */}
         <div className="overflow-hidden">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
+            className="flex transition-transform duration-1000"
+            style={{
+              transform: `translateX(-${current * 100}%)`,
+              transitionTimingFunction: "cubic-bezier(0.8, 0, 0.2, 1)",
+            }}
           >
             {slides.map((slide, slideIndex) => {
               const isEven = (slideIndex + 1) % 2 === 0;
@@ -170,8 +185,12 @@ export default function Hero() {
                 <div key={slide.id} className="w-full flex-shrink-0">
                   <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-start px-4 md:px-12">
                     {/* Text Content */}
-                    <div className={`space-y-8 ${isEven ? "md:order-2" : "md:order-1"}`}>
-                      <h1 className={`text-3xl md:text-4xl font-extrabold tracking-tight ${isEven ? "text-sky-600" : "text-green-700"}`}>
+                    <div
+                      className={`space-y-8 ${isEven ? "md:order-2" : "md:order-1"}`}
+                    >
+                      <h1
+                        className={`text-3xl md:text-4xl font-extrabold tracking-tight ${isEven ? "text-sky-600" : "text-green-700"}`}
+                      >
                         {slide.title}
                       </h1>
 
@@ -183,7 +202,9 @@ export default function Hero() {
                     </div>
 
                     {/* Image */}
-                    <div className={`relative h-[500px] md:h-[700px] rounded-lg border border-gray-400 shadow-xl ${isEven ? "md:order-1" : "md:order-2"}`}>
+                    <div
+                      className={`relative h-[500px] md:h-[700px] rounded-lg border border-gray-400 shadow-xl ${isEven ? "md:order-1" : "md:order-2"}`}
+                    >
                       <Image
                         src={slide.imageSrc}
                         alt={slide.imageAlt}
@@ -237,7 +258,7 @@ export default function Hero() {
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className="relative w-8 h-8 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="relative w-8 h-8 flex items-center justify-center rounded-full focus:outline-none focus:ring-1"
               >
                 {/* Background ring (always visible when inactive) */}
                 <svg
@@ -248,11 +269,24 @@ export default function Hero() {
                     cx="12"
                     cy="12"
                     r={radius}
-                    fill="transparent"
-                    stroke="#d1d5db"
-                    strokeWidth="2"
-                    className="opacity-50"
+                    fill="#BAB6B6"
+                    stroke="#757575"
+                    strokeWidth="1"
+                    className="opacity-20"
                   />
+
+                  <text
+                    x="12"
+                    y="12"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize="8"
+                    fontWeight="500"
+                    fill="#404040"
+                    className={`${isActive && !isFirstView ? "hidden" : "block"} opacity-70`}
+                  >
+                    {index + 1}
+                  </text>
                 </svg>
 
                 {/* Active dot logic */}
@@ -276,7 +310,7 @@ export default function Hero() {
                       className="animate-ring-fill"
                     />
                   </svg>
-                ) : isActive && !isFirstView || (isActive && index === 1) ? (
+                ) : (isActive && !isFirstView) || (isActive && index === 1) ? (
                   // Solid ready dot (for second slide or after first view)
                   <div
                     className={`absolute inset-0 w-full h-full rounded-full ${dotColor}`}
@@ -295,7 +329,7 @@ export default function Hero() {
             to { stroke-dashoffset: 0; }
           }
           .animate-ring-fill {
-            animation: ring-fill 5s linear forwards;
+            animation: ring-fill 10s linear forwards;
           }
         `}</style>
       </div>

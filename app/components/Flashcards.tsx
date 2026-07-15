@@ -16,7 +16,7 @@ export default function Flashcards() {
 
   const cards: CardType[] = [
     {
-      question: "Dla jakich celów przygotowuję operaty szacunkowe?",
+      question: "Dla jakich celów możemy przygotować operaty szacunkowe?",
       answers: [
         "dla potrzeb zabezpieczenia wierzytelności",
         "dla potrzeb podatkowych i skarbowych",
@@ -27,12 +27,12 @@ export default function Flashcards() {
       type: "W",
     },
     {
-      question: "Na jakich warunkach działam?",
+      question: "Na jakich warunkach działamy?",
       answers: ["Działam na umowach na wyłączność."],
       type: "P",
     },
     {
-      question: "Jakie nieruchomości wyceniam?",
+      question: "Jakie nieruchomości wyceniamy?",
       answers: [
         "Lokale mieszkalne",
         "Domy jednorodzinne",
@@ -43,9 +43,9 @@ export default function Flashcards() {
       type: "W",
     },
     {
-      question: "W jakich nieruchomościach się specjalizuję?",
+      question: "W czym specjalizujemy się?",
       answers: [
-        "Specjalizuję się w sprzedaży mieszkań, w szczególności z północy Poznania (Piątkowo, Naramowice, Winogrady).",
+        "Specjalizujemy się w sprzedaży mieszkań, w szczególności z północy Poznania (Piątkowo, Naramowice, Winogrady).",
       ],
       type: "P",
     },
@@ -57,12 +57,12 @@ export default function Flashcards() {
     {
       question: "Jakie są koszty pośrednictwa?",
       answers: [
-        "Od 1,5% wartości nieruchomości.",
+        "Od 2,5% wartości nieruchomości.",
       ],
       type: "P",
     },
     {
-      question: "W obrębie jakiego obszaru dokonuję wycen?",
+      question: "W obrębie jakiego obszaru dokonujemy wycen?",
       answers: ["Głównie woj. Wielkopolskie, pozostałe lokalizacje ustalane indywidualnie."],
       type: "W",
     },

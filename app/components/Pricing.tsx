@@ -5,11 +5,12 @@ import { BadgeAlert } from "lucide-react";
 
 export default function PricingComponent() {
   const pricingData = [
-    { service: "Działka niezabudowana", price: "od 500 zł" },
+    { service: "Działka niezabudowana", price: "od 600 zł" },
     { service: "Lokal mieszkalny", price: "od 600 zł" },
     { service: "Dom jednorodzinny gotowy", price: "od 750 zł" },
     { service: "Dom jednorodzinny w budowie", price: "od 800 zł" },
     { service: "Nieruchomości komercyjne", price: "Ustalane indywidualnie" },
+    { service: "Pośrednictwo nieruchomości", price: ">2,5% wartości nieruchomości" },
   ];
 
   return (
@@ -60,7 +61,7 @@ export default function PricingComponent() {
                 <a href="/kontakt" className="underline text-gray-600">
                   skontaktowania
                 </a>{" "}
-                się ze mną.
+                się z Nami.
               </p>
             </div>
           </div>
