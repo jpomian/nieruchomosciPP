@@ -19,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script async src="https://stats.jpomian.pl/k.js" data-website-id="76ed559b-37a4-4ba6-b92a-133023d88242"></script>
+      <script defer src="https://stats.jpomian.pl/script.js" data-website-id="1cc0e05c-9805-457d-95a5-05dc379daad7"></script>
+      <script defer src="https://stats.jpomian.pl/recorder.js" data-website-id="1cc0e05c-9805-457d-95a5-05dc379daad7"></script>
       <body
         className={`antialiased ${inter.className} flex flex-col min-h-screen`}
       >
