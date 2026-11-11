@@ -56,9 +56,14 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         scroll: "scroll 20s linear infinite",
+        marquee: "marquee 50s linear infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
